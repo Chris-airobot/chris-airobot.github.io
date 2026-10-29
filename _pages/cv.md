@@ -6,10 +6,21 @@ nav: true
 nav_order: 4
 ---
 
-## Academic CV
+# Tianyuan (Chris) Liu
 
-The verified two-page academic CV PDF has not yet been added to this repository.
+**Robotics Engineer · Robot Learning · Manipulation · Real-Robot Deployment**
 
-Until then, please visit my [research projects]({{ '/projects/' | relative_url }}) and [publications]({{ '/publications/' | relative_url }}).
+{% assign cv_file = site.static_files | where: "path", "/assets/pdf/Tianyuan_Liu_CV.pdf" | first %}
+{% if cv_file %}
 
-For inquiries, email **tianyuan4113@gmail.com**.
+[**Download CV (PDF)**]({{ '/assets/pdf/Tianyuan_Liu_CV.pdf' | relative_url }}) · [Open PDF in a new tab]({{ '/assets/pdf/Tianyuan_Liu_CV.pdf' | relative_url }})
+
+<iframe src="{{ '/assets/pdf/Tianyuan_Liu_CV.pdf' | relative_url }}" title="Tianyuan Liu CV (PDF)" width="100%" height="950" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
+
+{% else %}
+
+My two-page CV covers research and engineering experience at **Samsung Research China**, **Zoellent Technology**, and **Monash University**, as well as my PhD research at Deakin University and prior degrees at the University of Melbourne.
+
+For a copy, please contact me via **tianyuan4113@gmail.com**.
+
+{% endif %}

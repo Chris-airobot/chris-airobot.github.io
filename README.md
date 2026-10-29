@@ -1,80 +1,91 @@
 # Tianyuan Liu — Academic Research Website
 
-Professional academic research portfolio for Tianyuan Liu, PhD Candidate at Deakin University.
+A responsive academic research portfolio for Tianyuan (Chris) Liu, PhD Candidate in Robotics & AI at Deakin University.
 
-**Pages:** Home · Projects · Publications · About · CV  
-**Website source:** https://github.com/Chris-airobot/chris-airobot.github.io
+## Pages
 
-## Local preview
+- `index.html` — researcher introduction and featured projects
+- `projects.html` — project explanations, research demo videos, and Samsung technical media
+- `publications.html` — publications and preprints
+- `about.html` — education, research interests, and experience
+- `cv.html` — original Academic CV when its PDF is available
+
+The sidebar-first layout is inspired by the navigation and research-portfolio approach of https://jasonabichebli.me/. Content and visual design are custom. Main site styles and logic live in `portfolio.css` and `portfolio.js`.
+
+## Preview locally on Ubuntu
 
 ```bash
+mkdir -p ~/Projects
+cd ~/Projects
 git clone https://github.com/Chris-airobot/chris-airobot.github.io.git
 cd chris-airobot.github.io
 python3 -m http.server 8000
 ```
 
-Open http://localhost:8000.
+Open **http://localhost:8000**.
 
-This is a static site. Python 3 is sufficient; no Node.js installation is required.
-
-## Import videos and screenshots from the private Videos repository
-
-The source asset library is `Chris-airobot/Videos`, maintained privately as an archive.
-Its **user-approved public-facing media** is imported to this repository; the source repository need not be made public.
-
-On a computer with a local checkout at `~/Documents/Videos`:
+Already cloned?
 
 ```bash
 cd ~/Projects/chris-airobot.github.io
 git pull origin main
+python3 -m http.server 8000
+```
+
+## Robot demo videos
+
+The two ICRA project images on the home page were extracted from the user's actual demonstration videos; they are checked into the site as `assets/images/bookshelf-poster.jpg` and `assets/images/execution-poster.jpg`. **The original long videos have not yet been added to GitHub.**
+
+Copy the provided originals to these paths:
+
+```
+assets/videos/bookshelf.mp4    ← Bookshelf.mp4
+assets/videos/execution.mp4    ← Execution.mp4
+```
+
+The research page automatically switches from preview images to embedded video players when these files exist.
+
+## Import the Samsung research media archive
+
+A verified, private copy of `Chris-airobot/Videos` exists locally as `~/Documents/Videos` on the original research machine. Its shareable media can be imported without publishing the private source repository itself.
+
+```bash
 python3 scripts/import_media.py ~/Documents/Videos
 ```
 
-If the ICRA research videos are also available in `~/Downloads`:
+Optional ICRA originals, if they are in Downloads:
 
 ```bash
 python3 scripts/import_media.py ~/Documents/Videos --icra-dir ~/Downloads
 ```
 
-The importer will:
+The importer selects images and videos, reconstructs the split localization MP4, combines and extracts images/videos from `G1_Portfolio_Review.zip.part-*`, and creates `assets/portfolio/g1/manifest.json`. The site automatically renders this media when available.
 
-1. Copy SAM3/FoundationPose, RGB-D diagnostics, GOPT screenshots and selected visual material.
-2. Join the four pieces of `localization/viz_root_alignment.mp4` and check SHA-256.
-3. Join the three pieces of `G1_Portfolio_Review.zip`, check SHA-256, extract visual media, and generate an automatically loaded gallery manifest.
-4. Copy the top-level `recording.mp4` as an additional (unlabelled) research recording.
-5. Optionally copy `Bookshelf.mp4` and `Execution.mp4` as the two ICRA demo videos.
-
-Only images/videos are extracted from the ZIP. Model weights, code, logs and diagnostic files are not copied into the public website. Imported media should not exceed 95 MiB per file; larger files require external hosting.
-
-After inspecting the locally rendered website and imported media, publish the approved visual assets:
+Check the imported content visually, then publish as desired:
 
 ```bash
-git add assets/
-git commit -m "Add approved robotics research demo media"
+git add assets
+git commit -m "Add research demonstration media"
 git push origin main
 ```
 
-## Site layout
+The repository is **public**. Confirm that the contents are intended for public release before pushing additional media or data.
 
-- `index.html`: researcher introduction and featured work.
-- `projects.html`: two ICRA projects, ACRA work, Samsung humanoid systems section.
-- `samsung-media.js` + `samsung-media.css`: supplemental images, videos and an auto-generated gallery.
-- `publications.html`: publication status and arXiv links.
-- `about.html`: academic background and experience.
-- `cv.html`: downloadable CV once PDF has been added.
+## Academic CV
 
-**Academic CV:** The two-page verified PDF is not yet in this repository. When available, copy it to `assets/Tianyuan_Liu_Academic_CV.pdf` and it will appear automatically.
+The verified two-page PDF has not been retrieved. Add it at `assets/Tianyuan_Liu_Academic_CV.pdf` to enable its download button.
 
-## Scientific accuracy
+## Publishing
 
-- Two ICRA 2027 manuscripts are **under review** as of October 2026.
+In GitHub repository Settings → Pages, choose **Deploy from a branch**, `main`, `/(root)`. The domain should be https://chris-airobot.github.io.
+
+## Layout history
+
+The first design is preserved at branch `backup/initial-layout-20261030`.
+
+## Attribution and accuracy
+
+- Two papers remain ICRA 2027 submissions **under review** as of October 2026.
 - The ACRA 2025 paper is **published** and had an oral presentation.
-- The Unitree G1 physical box-manipulation system was a **team-developed, real-deployed system**; the website identifies Tianyuan's perception, calibration, localization and integration contributions.
-- The GOPT real-scene example was an **offline planning visualization**, not G1 robot execution.
-- Camera observations were made under different capture conditions and are not presented as direct accuracy rankings.
-
-## Publishing with GitHub Pages
-
-After review, go to repository **Settings → Pages → Build and deployment → Deploy from a branch**, select `main` and `/(root)`. The resulting URL is https://chris-airobot.github.io.
-
-The repo and its assets are public. Do not commit any non-public material you do not intend to release.
+- G1 box-manipulation was deployed on the physical Unitree G1 as a **team project**. The site's individual contribution statements emphasize perception, tracking, calibration, localization, and integration.
+- GOPT planning figures illustrate **offline planning**, not an autonomous G1 box-placement execution.

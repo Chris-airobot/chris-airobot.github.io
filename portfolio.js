@@ -110,6 +110,7 @@ function cv(){
 const views={Home:home,Research:projects,Publications:publications,About:about,CV:cv};
 document.querySelector("#app").innerHTML=frame(page);
 document.querySelector("#content").innerHTML=(views[page]||home)();
+if(location.hash){requestAnimationFrame(()=>{const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target)target.scrollIntoView({block:"start",behavior:"instant"});});}
 const menu=document.querySelector(".menu-toggle"),sidebar=document.querySelector(".sidebar");
 menu.addEventListener("click",()=>{const open=sidebar.classList.toggle("open");menu.setAttribute("aria-expanded",open);menu.setAttribute("aria-label",open?"Close menu":"Open menu");menu.textContent=open?"×":"☰"});
 sidebar.querySelectorAll(".nav a").forEach(a=>a.addEventListener("click",()=>{sidebar.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="☰"}));

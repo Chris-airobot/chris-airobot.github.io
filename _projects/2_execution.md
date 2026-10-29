@@ -9,7 +9,9 @@ permalink: /projects/execution-aware-placement/
 related_publications: true
 ---
 
-**ICRA 2027 submission — under review.** [Read the paper](https://arxiv.org/abs/2609.19946).
+**Under Review** · [arXiv Paper](https://arxiv.org/abs/2609.19946)
+
+**Authors:** Tianyuan Liu, Rutherford Agbeshi Patamia, Benjamin Champion, Richard Dazeley, Akansel Cosgun.
 
 A grasp-conditioned learned ranking model prioritizes placement actions based on their expected downstream behavior, including motion planning, pick-and-place execution, object release and stability.
 

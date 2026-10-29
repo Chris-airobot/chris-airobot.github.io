@@ -9,11 +9,13 @@ permalink: /projects/bookshelf-insertion/
 related_publications: true
 ---
 
-**ICRA 2027 submission — under review.** [Read the paper](https://arxiv.org/abs/2609.19962).
+**Under Review** · [arXiv Paper](https://arxiv.org/abs/2609.19962)
+
+**Authors:** Tianyuan Liu, Rutherford Agbeshi Patamia, Benjamin Champion, Akansel Cosgun, Richard Dazeley.
 
 A nominal controller provides the insertion motion, while a learned residual PPO policy corrects local errors and contacts.
 
-In the reported narrow-gap evaluation (approximately 2 mm clearance), success increased from around **20%** for nominal control to around **90%** with residual reinforcement learning.
+In **60 physical xArm7 trials** across 30 matched conditions, insertion success improved from **26.7%** with nominal control to **63.3%** with residual reinforcement learning.
 
 ![xArm7 book insertion experiment]({{ '/assets/images/bookshelf-poster.jpg' | relative_url }})
 

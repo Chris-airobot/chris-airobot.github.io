@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import subprocess
 import sys
 import tempfile
 import zipfile
@@ -119,6 +120,24 @@ def import_portfolio(zip_path: Path, outdir: Path) -> int:
     return len(records)
 
 
+
+def create_icra_poster(video: Path, image: Path) -> None:
+    if not video.is_file() or not shutil.which("ffmpeg"):
+        return
+    image.parent.mkdir(parents=True, exist_ok=True)
+    command = [
+        "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+        "-ss", "00:00:10", "-i", str(video),
+        "-frames:v", "1", "-vf", "scale=960:-2",
+        "-q:v", "5", str(image)
+    ]
+    try:
+        subprocess.run(command, check=True, timeout=60)
+        print(f"  POSTER: {image.relative_to(SITE)}")
+    except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
+        print(f"  SKIP poster generation: {video.name}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path, help="Path to local private Videos clone")
@@ -150,7 +169,9 @@ def main() -> int:
             ("Bookshelf.mp4", "bookshelf.mp4"),
             ("Execution.mp4", "execution.mp4"),
         ]:
-            copy_file(folder / src_name, SITE / "assets/videos" / target)
+            copied = copy_file(folder / src_name, SITE / "assets/videos" / target)
+            if copied:
+                create_icra_poster(SITE / "assets/videos" / target, SITE / "assets/images" / (Path(target).stem + "-poster.jpg"))
 
     print("\nMedia import complete. Preview locally using:")
     print("  python3 -m http.server 8000")

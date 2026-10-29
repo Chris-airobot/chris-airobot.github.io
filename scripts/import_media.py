@@ -90,7 +90,7 @@ def import_portfolio(zip_path: Path, outdir: Path) -> int:
                 continue
             name = PurePosixPath(info.filename.replace("\\", "/"))
             parts = name.parts
-            if not parts or any(s in {"..", "."} for s in parts):
+            if name.is_absolute() or not parts or ":" in parts[0] or any(p in {"..", "."} for p in parts):
                 continue
             if parts[0].startswith("__MACOSX") or any(p.startswith(".") for p in parts):
                 continue

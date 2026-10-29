@@ -21,6 +21,6 @@ latest_posts:
 
 I am **Tianyuan (Chris) Liu**, a PhD candidate in Robotics & AI at **Deakin University**, supervised by Prof. Richard Dazeley and Dr. Akansel Cosgun.
 
-My research focuses on **robot learning, robotic manipulation, reinforcement learning, and reliable execution**. I develop learning-based methods and evaluate them on physical robots, including Franka Panda and xArm7.
+My PhD research has primarily focused on **robotic manipulation**, especially grasp-conditioned placement, execution-aware planning, and contact-rich insertion. I develop and evaluate learning-based approaches on physical robot manipulators, including Franka Panda and xArm7.
 
-I have also worked on humanoid robotics at Samsung Research, contributing perception, 6D pose estimation, multi-sensor calibration, localization and real-robot integration.
+I am now transitioning toward **humanoid whole-body control**, with a growing focus on reinforcement learning and real-world robot deployment. At Samsung Research, I contributed to perception, 6D pose tracking, multi-sensor calibration, localization, and system integration for a team-developed Unitree G1 manipulation system.

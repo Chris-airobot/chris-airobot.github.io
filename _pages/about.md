@@ -10,7 +10,7 @@ profile:
   image_circular: false
   more_info: >
 
-selected_papers: true
+selected_papers: false
 social: true
 
 announcements:
@@ -25,4 +25,18 @@ My research focuses on **robot learning, robotic manipulation, reinforcement lea
 
 I have also worked on humanoid robotics at Samsung Research, contributing perception, 6D pose estimation, multi-sensor calibration, localization and real-robot integration.
 
-[Research projects]({{ '/projects/' | relative_url }}) · [Publications]({{ '/publications/' | relative_url }}) · [CV]({{ '/cv/' | relative_url }}) · [Email](mailto:tianyuan4113@gmail.com)
+## Selected Projects
+
+**[Contact-Rich Robotic Book Insertion]({{ '/projects/bookshelf-insertion/' | relative_url }})**  
+*Robot Learning · xArm7 · ICRA 2027 under review*  
+Residual reinforcement learning for reliable insertion in tight-clearance environments.
+
+**[Execution-Aware Robotic Placement]({{ '/projects/execution-aware-placement/' | relative_url }})**  
+*Robot Manipulation · xArm7 · ICRA 2027 under review*  
+Ranking grasp-conditioned placement actions using downstream execution outcomes.
+
+**[Humanoid Perception & Integration]({{ '/projects/humanoid-integration/' | relative_url }})**  
+*Samsung Research · Unitree G1*  
+6D object tracking, multi-sensor localization, calibration, and real-robot system integration.
+
+[**All Projects →**]({{ '/projects/' | relative_url }}) &nbsp;&nbsp; [**Publications →**]({{ '/publications/' | relative_url }})

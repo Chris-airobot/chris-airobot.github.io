@@ -33,3 +33,20 @@ menubtn.onclick=()=>{const n=document.querySelector(".nav"),v=n.classList.toggle
 async function exists(url){try{const r=await fetch(url,{method:"HEAD",cache:"no-store"});return r.ok}catch(e){return false}}
 document.querySelectorAll("[data-video]").forEach(async box=>{const video=box.querySelector("video"),url=video.querySelector("source").getAttribute("src");if(!(await exists(url))){video.hidden=true;box.querySelector(".missing").hidden=false}});
 if(current==="CV")exists("assets/Tianyuan_Liu_Academic_CV.pdf").then(ok=>{if(ok){document.querySelector("#cvready").hidden=false;document.querySelector("#cvpending").hidden=true;}});
+
+if(current==="Home"){
+  const posters=[
+    ["a.card[href='projects.html#bookshelf'] .art","assets/images/bookshelf-poster.jpg"],
+    ["a.card[href='projects.html#execution'] .art","assets/images/execution-poster.jpg"],
+    [".featureart","assets/images/bookshelf-poster.jpg"]
+  ];
+  posters.forEach(async ([selector,path])=>{
+    const element=document.querySelector(selector);
+    if(element && await exists(path)){
+      element.style.backgroundImage="linear-gradient(0deg,rgba(15,39,55,.35),rgba(15,39,55,.08)),url('"+path+"')";
+      element.style.backgroundSize="cover";
+      element.style.backgroundPosition="center";
+      element.classList.add("has-poster");
+    }
+  });
+}

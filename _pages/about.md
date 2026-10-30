@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: >-
   PhD Candidate in Robotics & AI · Deakin University<br>

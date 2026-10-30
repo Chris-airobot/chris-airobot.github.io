@@ -1,6 +1,6 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 description: Robotic manipulation, learning-based planning, and real-world deployment.
 nav: true

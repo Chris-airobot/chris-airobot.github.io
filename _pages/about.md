@@ -21,9 +21,9 @@ latest_posts:
   enabled: false
 ---
 
-I am **Tianyuan (Chris) Liu**, a PhD candidate in Robotics & AI at **Deakin University**, supervised by Prof. Richard Dazeley, Dr. Akansel Cosgun, and Dr. Benjamin Champion.
+I am **Tianyuan (Chris) Liu**, a PhD candidate in Robotics & AI at **Deakin University**, supervised by **Dr. Akansel Cosgun, Prof. Richard Dazeley, and Dr. Benjamin Champion**.
 
-I hold a **Master of Information Technology (AI)** and a **Bachelor of Science (Mechatronics Engineering)** from the **University of Melbourne**. During my master's studies, I conducted research on **adversarial reinforcement learning** under the supervision of Wafa Johal and Christopher Leckie.
+I hold a **Master of Information Technology (AI)** and a **Bachelor of Science (Mechatronics Engineering)** from the **University of Melbourne**. During my master's studies, I conducted research on **adversarial reinforcement learning** under the supervision of **A/Prof Wafa Johal and Prof. Christopher Leckie**.
 
 My PhD research has primarily focused on **robotic manipulation**, especially grasp-conditioned placement, execution-aware planning, and contact-rich insertion. I develop and evaluate learning-based approaches on physical robot manipulators, including Franka Panda and xArm7.
 

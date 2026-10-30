@@ -3,7 +3,7 @@ layout: page
 title: Book insertion with residual RL
 description: Contact-rich manipulation and sim-to-real reinforcement learning with xArm7.
 img: assets/images/bookshelf-poster.jpg
-importance: 1
+importance: 2
 category: research
 permalink: /projects/bookshelf-insertion/
 related_publications: true

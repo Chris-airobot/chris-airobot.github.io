@@ -1,25 +1,36 @@
 ---
 layout: page
-title: Humanoid perception and real-robot integration
-description: Samsung Research · Unitree G1 · RGB-D, 6D tracking, localization and calibration.
-img: assets/images/samsung/gopt-real-scene.png
-importance: 4
+title: Samsung Research — Unitree G1 Humanoid Manipulation
+description: Real-robot policy deployment, box handling, 6D perception, localization, and system integration.
+importance: 1
 category: industry
 permalink: /projects/humanoid-integration/
 ---
 
-**Samsung Research (2026) — team-developed physical Unitree G1 system.**
+**Samsung Research China · Robotics Research Intern · 2026**
 
-I contributed to the perception and systems-integration elements of a deployed humanoid box manipulation system, including RGB-D sensing, SAM3 segmentation, FoundationPose 6D object tracking, VIVE localization, ChArUco calibration, frame alignment, and real-robot debugging.
+**Platform:** Unitree G1 humanoid robot  
+**Focus:** Real-world policy deployment, perception, localization, and system integration
 
-### Technical visuals
+I worked on **real-robot policy deployment and system integration** for a Unitree G1 box-handling task, bringing learned control together with robot perception and localization.
 
-![GOPT offline planning in a real scene]({{ '/assets/images/samsung/gopt-real-scene.png' | relative_url }})
+### My work
 
-*Offline GOPT planning visualization; not evidence that this exact GOPT plan was executed on Unitree G1.*
+- **Real-robot deployment:** Participated in integrating and deploying the G1 box-handling policy on the physical robot.
+- **Object perception:** Built workflows using RGB-D sensing, SAM3 and FoundationPose for segmentation and 6D object pose tracking.
+- **Localization and calibration:** Developed VIVE-tracker localization, ChArUco-based extrinsic calibration, and coordinate-frame alignment.
+- **System integration:** Connected perception and localization outputs to the robot control pipeline and supported real-world testing and debugging.
 
-![Orbbec Gemini plane measurement]({{ '/assets/images/samsung/gemini-plane.png' | relative_url }})
+The **box-handling policy was successfully deployed on the physical Unitree G1**. My individual contributions focused on the deployment and integration work described above.
 
-![RealSense D435i and FoundationStereo plane diagnostic]({{ '/assets/images/samsung/d435i-plane.png' | relative_url }})
+### Selected system diagnostics
 
-**Attribution:** The robot control policy and overall G1 system were team-developed accomplishments.
+The following images document supporting perception and calibration work. They are **not** photographs or videos of the G1 executing the box-handling policy.
+
+![Offline placement planning visualization]({{ '/assets/images/samsung/gopt-real-scene.png' | relative_url }})
+
+*Offline placement-planning diagnostic; this visualization should not be interpreted as a physical G1 execution.*
+
+![RGB-D plane diagnostic from Orbbec Gemini]({{ '/assets/images/samsung/gemini-plane.png' | relative_url }})
+
+A real-robot G1 project photograph or demonstration can be added here when an appropriate shareable asset is available.

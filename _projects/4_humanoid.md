@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Samsung Research — Unitree G1 Humanoid Manipulation
-description: Real-robot policy deployment, box handling, 6D perception, localization, and system integration.
+description: Samsung Research · Unitree G1 · Real-world box handling, policy deployment, 6D tracking, and localization.
+img: assets/images/samsung/g1-real-deployment.jpg
 importance: 1
 category: industry
 permalink: /projects/humanoid-integration/
@@ -22,6 +23,17 @@ I worked on **real-robot policy deployment and system integration** for a Unitre
 - **System integration:** Connected perception and localization outputs to the robot control pipeline and supported real-world testing and debugging.
 
 The **box-handling policy was successfully deployed on the physical Unitree G1**. My individual contributions focused on the deployment and integration work described above.
+
+### Real-robot demonstration
+
+<video controls playsinline preload="metadata" poster="{{ '/assets/images/samsung/g1-real-deployment.jpg' | relative_url }}" style="width:100%;max-width:960px;border-radius:8px;">
+  <source src="{{ '/assets/videos/g1-box-handling-demo.mp4' | relative_url }}" type="video/mp4">
+  Your browser does not support embedded video. [Watch the clip]({{ '/assets/videos/g1-box-handling-demo.mp4' | relative_url }}).
+</video>
+
+*Selected 23-second excerpt from a physical Unitree G1 box-handling test, recorded at Samsung Research. Laboratory staff are visible nearby during the experimental run.*
+
+![Physical Unitree G1 box-handling demonstration]({{ '/assets/images/samsung/g1-real-deployment.jpg' | relative_url }})
 
 ### Selected system diagnostics
 

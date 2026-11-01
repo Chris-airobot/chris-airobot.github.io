@@ -9,7 +9,7 @@ Only projects with preview_video use an MP4 card; the rest retain the stock imag
         {% if project.img %}
           <div class="col-md-6">
             {% if project.preview_video %}
-              <video class="card-img project-card-video" muted loop playsinline preload="none"
+              <video class="card-img project-card-video" autoplay muted loop playsinline preload="metadata"
                 poster="{{ project.img | relative_url }}"
                 aria-label="{{ project.title | escape }} video preview"
                 style="display:block;width:100%;aspect-ratio:16/9;object-fit:{% if project.preview_video_fit == 'contain' %}contain{% else %}cover{% endif %};background:#111;">

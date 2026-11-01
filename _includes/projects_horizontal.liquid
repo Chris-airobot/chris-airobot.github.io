@@ -8,7 +8,16 @@ Only projects with preview_video use an MP4 card; the rest retain the stock imag
       <div class="row no-gutters">
         {% if project.img %}
           <div class="col-md-6">
-            {% if project.preview_video %}
+            {% if project.preview_animation %}
+              <picture>
+                <source type="image/webp" srcset="{{ project.preview_animation | relative_url }}">
+                <img class="card-img"
+                  src="{{ project.img | relative_url }}"
+                  alt="{{ project.title | escape }} moving robot demonstration"
+                  loading="lazy" decoding="async"
+                  style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
+              </picture>
+            {% elsif project.preview_video %}
               <video class="card-img project-card-video" autoplay muted loop playsinline preload="metadata"
                 poster="{{ project.img | relative_url }}"
                 aria-label="{{ project.title | escape }} video preview"

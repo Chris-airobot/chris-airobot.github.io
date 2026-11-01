@@ -175,10 +175,12 @@ nav_order: 3
           <p class="exp-dates"><time datetime="2021-07">Jul 2021</time> – <time datetime="2023-07">Jul 2023</time></p>
           <ul>
             <li>Specialized in artificial intelligence, machine learning, and adversarial reinforcement learning.</li>
+            <li>Master's thesis: <strong>Applying Human-in-the-Loop in Adversarial Reinforcement Learning</strong> (2023).</li>
             <li>Research supervised by A/Prof Wafa Johal and Prof. Christopher Leckie.</li>
             <li><strong>Dean’s List (2022).</strong></li>
           </ul>
-          <div class="exp-tags"><span>Artificial Intelligence</span><span>Reinforcement Learning</span><span>Machine Learning</span></div>
+          <div class="exp-tags"><span>Artificial Intelligence</span><span>Adversarial RL</span><span>Human-in-the-Loop</span></div>
+          <a class="exp-project-link" href="{{ '/research/master-thesis-adversarial-rl/' | relative_url }}">Explore Master's thesis research <span aria-hidden="true">↗</span></a>
         </div>
       </article>
     </section>

@@ -4,6 +4,7 @@ title: Execution-aware robotic placement
 description: Predicting full-task placement outcomes beyond endpoint feasibility.
 img: assets/images/execution-poster.jpg
 preview_video: assets/videos/execution-preview.mp4
+preview_animation: assets/images/execution-preview-animated.webp
 importance: 3
 category: research
 permalink: /projects/execution-aware-placement/

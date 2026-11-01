@@ -41,6 +41,19 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y imagemagick ffmpeg
 
+      - name: Verify Monash and RVSS media is uploaded
+        run: |
+          set -euo pipefail
+          for path in \
+            assets/videos/monash-pivoting-demo.mp4 \
+            assets/images/monash-pivoting-poster.jpg \
+            assets/images/monash-pivoting-animated.webp \
+            assets/videos/rvss-navigation-demo.mp4 \
+            assets/images/rvss-navigation-poster.jpg \
+            assets/images/rvss-navigation-animated.webp; do
+            test -s "$path" || { echo "MISSING MEDIA: $path"; exit 1; }
+          done
+
       - name: Generate animated Execution-Aware project snapshot
         run: |
           set -euo pipefail

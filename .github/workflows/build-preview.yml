@@ -1,4 +1,4 @@
-name: Build and preview al-folio on GitHub Pages
+name: Publish academic portfolio on GitHub Pages
 
 on:
   push:
@@ -11,14 +11,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-preview
+  group: pages-portfolio
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out al-folio preview branch
+      - name: Check out academic website source
         uses: actions/checkout@v4
 
       - name: Set up Ruby and gems
@@ -65,10 +65,10 @@ jobs:
           test -s assets/images/execution-preview-animated.webp
           ls -lh assets/images/execution-preview-animated.webp
 
-      - name: Build al-folio under /al-folio-preview
+      - name: Build academic website at root URL
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build --baseurl /al-folio-preview --destination _site_preview --trace
+        run: bundle exec jekyll build --baseurl "" --destination _site_release --trace
 
       - name: Add build revision to Projects navigation links
         run: |
@@ -77,8 +77,8 @@ jobs:
           from pathlib import Path
           import os
 
-          root = Path("_site_preview")
-          previous = "/al-folio-preview/projects/"
+          root = Path("_site_release")
+          previous = "/projects/"
           current = previous + "?v=" + os.environ["GITHUB_SHA"][:12]
           changed_pages = 0
           changed_links = 0
@@ -110,14 +110,14 @@ jobs:
                       src = dict(attrs).get("src", "")
                       self.srcs.append(src)
 
-          page = Path("_site_preview/projects/index.html")
+          page = Path("_site_release/projects/index.html")
           assert page.is_file(), f"Missing page: {page}"
           images = Images()
           images.feed(page.read_text(encoding="utf-8"))
           for filename in ("grasp-preview-animated.webp", "execution-preview-animated.webp"):
-              media_path = Path("_site_preview/assets/images") / filename
+              media_path = Path("_site_release/assets/images") / filename
               assert media_path.is_file() and media_path.stat().st_size > 0, f"Missing media: {media_path}"
-              expected = "/al-folio-preview/assets/images/" + filename
+              expected = "/assets/images/" + filename
               assert any(expected in src for src in images.srcs), f"Projects page lacks animated img for {filename}"
               print(f"OK animated snapshot: {filename} ({media_path.stat().st_size} bytes)")
           print("Projects card HTML checked successfully")
@@ -132,29 +132,77 @@ jobs:
           links.feed(page.read_text(encoding="utf-8"))
           project_links = [href for href in links.links if "projects" in href.lower()]
           print("PROJECT NAV AND CARD LINKS:", repr(project_links[:30]))
-          assert any(href.startswith("/al-folio-preview/projects/?v=") for href in project_links), "Projects navigation does not carry a cache-busting build revision"
+          assert any(href.startswith("/projects/?v=") for href in project_links), "Projects navigation does not carry a cache-busting build revision"
           PY
 
-      - name: Fetch original main website without changing it
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: original-main
-
-      - name: Assemble old homepage plus new preview
+      - name: Keep previous preview URLs working
         run: |
-          mkdir -p _publish/al-folio-preview
-          cp -a original-main/. _publish/
-          rm -rf _publish/.git _publish/.github
-          cp -a _site_preview/. _publish/al-folio-preview/
-          test -f _publish/index.html
-          test -f _publish/al-folio-preview/index.html
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import html
+          import json
+          import shutil
+
+          root = Path("_site_release")
+          assert (root / "index.html").is_file(), "Missing new homepage"
+          assert (root / "projects/index.html").is_file(), "Missing Projects page"
+          assert (root / "experience/index.html").is_file(), "Missing Experience page"
+          assert (root / "research/master-thesis-adversarial-rl/index.html").is_file(), "Missing master's thesis page"
+
+          def redirect_page(destination, destination_url):
+              destination.parent.mkdir(parents=True, exist_ok=True)
+              js_url = json.dumps(destination_url)
+              safe_url = html.escape(destination_url, quote=True)
+              destination.write_text(
+                  '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+                  '<meta name="robots" content="noindex">'
+                  '<meta http-equiv="refresh" content="0; url=' + safe_url + '">'
+                  '<link rel="canonical" href="' + safe_url + '">'
+                  '<title>Page moved</title></head><body>'
+                  '<p>This page has moved to <a href="' + safe_url + '">its new address</a>.</p>'
+                  '<script>location.replace(' + js_url + ' + location.search + location.hash);</script>'
+                  '</body></html>', encoding="utf-8"
+              )
+
+          # Preserve links previously shared at /al-folio-preview/, including
+          # deep project pages, publications, CV and the thesis overview.
+          pages = list(root.rglob("*.html"))
+          legacy = root / "al-folio-preview"
+          redirects = 0
+          for page in pages:
+              relative = page.relative_to(root)
+              canonical = "/" + relative.as_posix()
+              if canonical.endswith("/index.html"):
+                  canonical = canonical[:-10]
+              redirect_page(legacy / relative, canonical)
+              redirects += 1
+
+          # Keep older direct links to preview images, PDFs, videos and JS working.
+          shutil.copytree(root / "assets", legacy / "assets", dirs_exist_ok=True)
+
+          # Also preserve URLs from the original pre-al-folio portfolio.
+          for old, new in [
+              ("about.html", "/"),
+              ("projects.html", "/projects/"),
+              ("publications.html", "/publications/"),
+              ("cv.html", "/cv/"),
+          ]:
+              path = root / old
+              if not path.exists():
+                  redirect_page(path, new)
+
+          assert (legacy / "index.html").is_file()
+          assert (legacy / "projects/index.html").is_file()
+          assert (legacy / "assets/videos/g1-box-handling-demo.mp4").is_file()
+          print(f"Created {redirects} old preview page redirects; new academic homepage is at /")
+          PY
 
       - name: Upload build artifact for debugging
         uses: actions/upload-artifact@v4
         with:
-          name: al-folio-preview-site
-          path: _site_preview/
+          name: academic-portfolio-root-site
+          path: _site_release/
           retention-days: 14
 
       - name: Configure GitHub Pages
@@ -163,7 +211,7 @@ jobs:
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _publish/
+          path: _site_release/
 
   deploy:
     needs: build

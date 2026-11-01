@@ -3,6 +3,7 @@ layout: page
 title: Execution-aware robotic placement
 description: Predicting full-task placement outcomes beyond endpoint feasibility.
 img: assets/images/execution-poster.jpg
+preview_video: assets/videos/execution-preview.mp4
 importance: 3
 category: research
 permalink: /projects/execution-aware-placement/
@@ -23,4 +24,4 @@ A grasp-conditioned learned ranking model prioritizes placement actions based on
   <source src="{{ '/assets/videos/execution.mp4' | relative_url }}" type="video/mp4">
 </video>
 
-*The full MP4 will become available once the original demo is copied to the website assets.*
+*Selected 53-second overview showing candidate ranking, planning, real-robot transfer, and final execution statistics.*

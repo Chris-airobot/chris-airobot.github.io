@@ -26,7 +26,13 @@ horizontal: true
       const videos = document.querySelectorAll("video.project-card-video");
       if (!videos.length) return;
       const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduceMotion) return;
+      if (reduceMotion) {
+        videos.forEach((video) => {
+          video.pause();
+          video.removeAttribute("autoplay");
+        });
+        return;
+      }
       if (!("IntersectionObserver" in window)) {
         videos.forEach((video) => video.play().catch(() => {}));
         return;

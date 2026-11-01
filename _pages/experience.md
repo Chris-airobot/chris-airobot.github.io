@@ -51,7 +51,7 @@ nav_order: 3
           <div class="exp-tags"><span>Unitree G1</span><span>Policy Deployment</span><span>FoundationPose</span><span>Localization</span></div>
           <a class="exp-project-link" href="{{ '/projects/humanoid-integration/' | relative_url }}">Watch G1 real-robot demo <span aria-hidden="true">↗</span></a>
         </div>
-        <a class="exp-media-link" href="{{ '/projects/humanoid-integration/' | relative_url }}" tabindex="-1" aria-hidden="true"><img class="exp-media" src="{{ '/assets/images/samsung/g1-real-deployment.jpg' | relative_url }}" alt="" loading="lazy"></a>
+        <a class="exp-media-link" href="{{ '/projects/humanoid-integration/' | relative_url }}" tabindex="-1" aria-hidden="true"><video class="exp-media" autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/images/samsung/g1-real-deployment.jpg' | relative_url }}" aria-label="Unitree G1 box-handling demonstration"><source src="{{ '/assets/videos/g1-box-handling-demo.mp4' | relative_url }}" type="video/mp4"></video></a>
       </article>
     </section>
 
@@ -143,7 +143,6 @@ nav_order: 3
           <div class="exp-tags"><span>Robot Manipulation</span><span>Reinforcement Learning</span><span>Sim-to-Real</span><span>xArm7</span></div>
           <a class="exp-project-link" href="{{ '/projects/' | relative_url }}">Explore PhD research projects <span aria-hidden="true">↗</span></a>
         </div>
-        <a class="exp-media-link" href="{{ '/projects/bookshelf-insertion/' | relative_url }}" tabindex="-1" aria-hidden="true"><img class="exp-media" src="{{ '/assets/images/bookshelf-poster.jpg' | relative_url }}" alt="" loading="lazy"></a>
       </article>
     </section>
 
@@ -176,7 +175,8 @@ nav_order: 3
           <p class="exp-dates"><time datetime="2021-07">Jul 2021</time> – <time datetime="2023-07">Jul 2023</time></p>
           <ul>
             <li>Specialized in artificial intelligence, machine learning, and adversarial reinforcement learning.</li>
-            <li>Research supervised by A/Prof Wafa Johal and Prof. Christopher Leckie; Dean’s List 2022.</li>
+            <li>Research supervised by A/Prof Wafa Johal and Prof. Christopher Leckie.</li>
+            <li><strong>Dean’s List (2022).</strong></li>
           </ul>
           <div class="exp-tags"><span>Artificial Intelligence</span><span>Reinforcement Learning</span><span>Machine Learning</span></div>
         </div>
@@ -192,7 +192,26 @@ nav_order: 3
           <p class="exp-role">Bachelor of Science (Mechatronics Engineering)</p>
           <p class="exp-dates"><time datetime="2018-02">Feb 2018</time> – <time datetime="2021-07">Jul 2021</time></p>
           <p class="exp-summary">Undergraduate foundation in mechatronics, control systems, programming, and robotics.</p>
-          <div class="exp-tags"><span>Mechatronics</span><span>Control</span><span>Engineering</span></div>
+          <ul>
+            <li><strong>Warman Competition 2020 (Team 17):</strong> contributed to a collaborative engineering design project involving concept selection, CAD iteration, and kinematic simulation.</li>
+          </ul>
+          <div class="exp-tags"><span>Mechatronics</span><span>Control</span><span>Engineering Design</span><span>Warman 2020</span></div>
+          {% assign warman_image = site.static_files | where: "path", "/assets/images/warman-2020-design-iterations.jpg" | first %}
+          {% if warman_image %}
+          <details class="exp-demo-expand exp-warman-design">
+            <summary>View Warman 2020 engineering design</summary>
+            <figure>
+              <a href="{{ '/assets/images/warman-2020-design-iterations.jpg' | relative_url }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ '/assets/images/warman-2020-design-iterations.jpg' | relative_url }}" loading="lazy" alt="Six CAD views showing three design iterations for the Warman 2020 conceptual mobile robot">
+              </a>
+              <figcaption>Warman 2020 Group 17: CAD design iterations (conceptual design; no physical prototype built).</figcaption>
+            </figure>
+          </details>
+          {% endif %}
+          {% assign warman_pdf = site.static_files | where: "path", "/assets/pdf/Warman_2020_design_portfolio.pdf" | first %}
+          {% if warman_pdf %}
+          <a class="exp-project-link" href="{{ '/assets/pdf/Warman_2020_design_portfolio.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">View Warman 2020 design portfolio (PDF) <span aria-hidden="true">↗</span></a>
+          {% endif %}
         </div>
       </article>
     </section>
@@ -272,6 +291,10 @@ nav_order: 3
 .experience-page .exp-team-photo figure { max-width: 480px; margin: .6rem 0 0; }
 .experience-page .exp-team-photo img { display: block; width: 100%; height: auto; border-radius: 7px; }
 .experience-page .exp-team-photo figcaption { margin-top: .3rem; font-size: .65rem; line-height: 1.5; color: var(--exp-muted); }
+.experience-page .exp-warman-design figure { max-width: 570px; margin: .6rem 0 0; }
+.experience-page .exp-warman-design img { display: block; width: 100%; height: auto; border: 1px solid var(--exp-border); border-radius: 7px; }
+.experience-page .exp-warman-design figcaption { margin-top: .3rem; font-size: .65rem; line-height: 1.5; color: var(--exp-muted); }
+.experience-page .exp-media-link video.exp-media { object-fit: contain; background: #141414; }
 
 
 .experience-page .exp-media-link { flex: 0 0 112px; width: 112px; border-radius: 7px; overflow: hidden; margin-top: .16rem; align-self: flex-start; }

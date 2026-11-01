@@ -1,53 +1,44 @@
 {% comment %}
-Local override of al-folio's projects_horizontal.liquid.
-Animated WebP projects use direct img tags; MP4 previews and static images remain supported.
+Shared, responsive project card.
+Desktop: equal media / text columns. Mobile: stacked.
+External GitHub links are siblings of the card's main link, not nested anchors.
 {% endcomment %}
-<div class="col mb-4">
-  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
-    <div class="card h-100 hoverable">
-      <div class="row no-gutters">
-        {% if project.img %}
-          <div class="col-md-6">
-            {% if project.preview_animation %}
-              <img class="card-img project-card-animation"
-                src="{{ project.preview_animation | relative_url }}?v=animated2"
-                alt="{{ project.title | escape }} animated robot demonstration"
-                loading="eager"
-                style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
-            {% elsif project.preview_video %}
-              <video class="card-img project-card-video" autoplay muted loop playsinline preload="metadata"
-                poster="{{ project.img | relative_url }}"
-                aria-label="{{ project.title | escape }} video preview"
-                style="display:block;width:100%;aspect-ratio:16/9;object-fit:{% if project.preview_video_fit == 'contain' %}contain{% else %}cover{% endif %};background:#111;">
-                <source src="{{ project.preview_video | relative_url }}" type="video/mp4">
-              </video>
-            {% else %}
-              {% include figure.liquid loading="eager" path=project.img sizes="(min-width: 768px) 156px, 50vw" alt="project thumbnail" class="card-img" %}
-            {% endif %}
-          </div>
+<div class="portfolio-project-entry">
+  <div class="card hoverable portfolio-project-card">
+    <a class="portfolio-project-main" href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+      <div class="portfolio-project-media{% unless project.img %} portfolio-project-placeholder{% endunless %}">
+        {% if project.preview_animation %}
+          <img class="portfolio-project-visual"
+            src="{{ project.preview_animation | relative_url }}?v=portfolio3"
+            alt="{{ project.title | escape }} animated preview"
+            loading="eager" decoding="async">
+        {% elsif project.preview_video %}
+          <video class="portfolio-project-visual project-card-video{% if project.preview_video_fit == 'contain' %} portfolio-project-contain{% endif %}"
+            autoplay muted loop playsinline preload="metadata"
+            poster="{{ project.img | relative_url }}"
+            aria-label="{{ project.title | escape }} video preview">
+            <source src="{{ project.preview_video | relative_url }}" type="video/mp4">
+          </video>
+        {% elsif project.img %}
+          <img class="portfolio-project-visual"
+            src="{{ project.img | relative_url }}"
+            alt="{{ project.title | escape }} project preview"
+            loading="lazy">
+        {% else %}
+          <span class="portfolio-project-placeholder-label">ROBOTICS RESEARCH</span>
+          <span class="portfolio-project-placeholder-mark">PROJECT</span>
         {% endif %}
-        <div class="{% if project.img %}col-md-6{% else %}col-md-12{% endif %}">
-          <div class="card-body">
-            <h3 class="card-title">{{ project.title }}</h3>
-            <p class="card-text">{{ project.description }}</p>
-            <div class="row ml-1 mr-1 p-0">
-              {% if project.github %}
-                <div class="github-icon">
-                  <div class="icon" data-toggle="tooltip" title="Code Repository">
-                    <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
-                  </div>
-                  {% if project.github_stars %}
-                    <span class="stars" data-toggle="tooltip" title="GitHub Stars">
-                      <i class="fa-solid fa-star"></i>
-                      <span id="{{ project.github_stars }}-stars"></span>
-                    </span>
-                  {% endif %}
-                </div>
-              {% endif %}
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </a>
+      <div class="portfolio-project-copy">
+        <h3 class="card-title">{{ project.title }}</h3>
+        <p class="card-text">{{ project.description }}</p>
+      </div>
+    </a>
+    {% if project.github %}
+      <a class="portfolio-project-code" href="{{ project.github }}" target="_blank" rel="noopener noreferrer"
+        aria-label="View source code for {{ project.title | escape }}">
+        <i class="fa-brands fa-github" aria-hidden="true"></i><span>Code</span>
+      </a>
+    {% endif %}
+  </div>
 </div>

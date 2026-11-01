@@ -80,7 +80,7 @@ nav_order: 3
         <div class="exp-copy">
           <div class="exp-heading"><h3>Robotics Vision Summer School</h3><span class="exp-type">Academic Activity</span></div>
           <p class="exp-role">Summer School &amp; Robotics Competition</p>
-          <p class="exp-dates"><time datetime="2025">2025</time></p>
+          <p class="exp-dates"><time datetime="2025-02">Feb 2025</time></p>
           <ul>
             <li>Participated in hands-on robotics vision training and an autonomous-navigation competition as part of <strong>Team Corolla</strong>.</li>
             <li><strong>Team Corolla placed 2nd</strong> in the autonomous navigation competition.</li>

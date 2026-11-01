@@ -57,6 +57,30 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --baseurl /al-folio-preview --destination _site_preview --trace
 
+      - name: Add build revision to Projects navigation links
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          root = Path("_site_preview")
+          previous = "/al-folio-preview/projects/"
+          current = previous + "?v=" + os.environ["GITHUB_SHA"][:12]
+          changed_pages = 0
+          changed_links = 0
+          for page in root.rglob("*.html"):
+              html = page.read_text(encoding="utf-8")
+              updated = html.replace('href="' + previous + '"', 'href="' + current + '"')
+              updated = updated.replace("href='" + previous + "'", "href='" + current + "'")
+              if updated != html:
+                  changed_pages += 1
+                  changed_links += html.count('href="' + previous + '"') + html.count("href='" + previous + "'")
+                  page.write_text(updated, encoding="utf-8")
+          print(f"Stamped {changed_links} navigation links across {changed_pages} HTML pages: {current}")
+          assert changed_links >= 1, "Missing Projects navigation links; check theme output"
+          PY
+
       - name: Verify animated snapshots in built Projects page
         run: |
           set -euo pipefail
@@ -95,7 +119,7 @@ jobs:
           links.feed(page.read_text(encoding="utf-8"))
           project_links = [href for href in links.links if "projects" in href.lower()]
           print("PROJECT NAV AND CARD LINKS:", repr(project_links[:30]))
-          assert any(href.startswith("/al-folio-preview/projects/") for href in project_links), "No navigation to preview Projects path"
+          assert any(href.startswith("/al-folio-preview/projects/?v=") for href in project_links), "Projects navigation does not carry a cache-busting build revision"
           PY
 
       - name: Fetch original main website without changing it

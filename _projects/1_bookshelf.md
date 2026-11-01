@@ -3,6 +3,7 @@ layout: page
 title: Book insertion with residual RL
 description: Contact-rich manipulation and sim-to-real reinforcement learning with xArm7.
 img: assets/images/bookshelf-poster.jpg
+preview_video: assets/videos/bookshelf-preview.mp4
 importance: 2
 category: research
 permalink: /projects/bookshelf-insertion/
@@ -17,12 +18,10 @@ A nominal controller provides the insertion motion, while a learned residual PPO
 
 In **60 physical xArm7 trials** across 30 matched conditions, insertion success improved from **26.7%** with nominal control to **63.3%** with residual reinforcement learning.
 
-![xArm7 book insertion experiment]({{ '/assets/images/bookshelf-poster.jpg' | relative_url }})
-
 ### Research demonstration
 
 <video controls preload="metadata" playsinline poster="{{ '/assets/images/bookshelf-poster.jpg' | relative_url }}" style="max-width:100%;width:100%">
   <source src="{{ '/assets/videos/bookshelf.mp4' | relative_url }}" type="video/mp4">
 </video>
 
-*The full MP4 will become available once the original demo is copied to the website assets.*
+*Selected 43-second overview featuring simulation and physical xArm7 experiments, including nominal versus residual-policy comparisons and difficult failure cases.*

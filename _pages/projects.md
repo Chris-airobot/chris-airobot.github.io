@@ -19,3 +19,35 @@ horizontal: true
   {% endfor %}
 </div>
 </div>
+
+<script>
+  (function () {
+    function setupProjectVideoPreviews() {
+      const videos = document.querySelectorAll("video.project-card-video");
+      if (!videos.length) return;
+      const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) return;
+      if (!("IntersectionObserver" in window)) {
+        videos.forEach((video) => video.play().catch(() => {}));
+        return;
+      }
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach((entry) => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }),
+        { threshold: 0.15 }
+      );
+      videos.forEach((video) => observer.observe(video));
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setupProjectVideoPreviews);
+    } else {
+      setupProjectVideoPreviews();
+    }
+  })();
+</script>

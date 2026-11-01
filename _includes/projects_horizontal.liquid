@@ -1,6 +1,6 @@
 {% comment %}
 Local override of al-folio's projects_horizontal.liquid.
-Only projects with preview_video use an MP4 card; the rest retain the stock image card.
+Animated WebP projects use direct img tags; MP4 previews and static images remain supported.
 {% endcomment %}
 <div class="col mb-4">
   <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
@@ -9,14 +9,11 @@ Only projects with preview_video use an MP4 card; the rest retain the stock imag
         {% if project.img %}
           <div class="col-md-6">
             {% if project.preview_animation %}
-              <picture>
-                <source type="image/webp" srcset="{{ project.preview_animation | relative_url }}">
-                <img class="card-img"
-                  src="{{ project.img | relative_url }}"
-                  alt="{{ project.title | escape }} moving robot demonstration"
-                  loading="lazy" decoding="async"
-                  style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
-              </picture>
+              <img class="card-img project-card-animation"
+                src="{{ project.preview_animation | relative_url }}?v=animated2"
+                alt="{{ project.title | escape }} animated robot demonstration"
+                loading="eager"
+                style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
             {% elsif project.preview_video %}
               <video class="card-img project-card-video" autoplay muted loop playsinline preload="metadata"
                 poster="{{ project.img | relative_url }}"

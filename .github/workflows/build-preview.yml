@@ -57,6 +57,35 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --baseurl /al-folio-preview --destination _site_preview --trace
 
+      - name: Verify animated snapshots in built Projects page
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class Images(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.srcs = []
+              def handle_starttag(self, tag, attrs):
+                  if tag == "img":
+                      src = dict(attrs).get("src", "")
+                      self.srcs.append(src)
+
+          page = Path("_site_preview/projects/index.html")
+          assert page.is_file(), f"Missing page: {page}"
+          images = Images()
+          images.feed(page.read_text(encoding="utf-8"))
+          for filename in ("grasp-preview-animated.webp", "execution-preview-animated.webp"):
+              media_path = Path("_site_preview/assets/images") / filename
+              assert media_path.is_file() and media_path.stat().st_size > 0, f"Missing media: {media_path}"
+              expected = "/al-folio-preview/assets/images/" + filename
+              assert any(expected in src for src in images.srcs), f"Projects page lacks animated img for {filename}"
+              print(f"OK animated snapshot: {filename} ({media_path.stat().st_size} bytes)")
+          print("Projects card HTML checked successfully")
+          PY
+
       - name: Fetch original main website without changing it
         uses: actions/checkout@v4
         with:

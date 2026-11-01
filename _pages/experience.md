@@ -42,7 +42,7 @@ nav_order: 3
         <div class="exp-copy">
           <div class="exp-heading"><h3>Samsung Research China</h3><span class="exp-type">Industry Research</span></div>
           <p class="exp-role">Robotics / Embodied AI Research Intern</p>
-          <p class="exp-dates"><time datetime="2026-08">Aug 2026</time> – <time datetime="2026-10">Oct 2026</time></p>
+          <p class="exp-dates"><time datetime="2026-08">Aug 2026</time> – <time datetime="2026-11">Nov 2026</time></p>
           <ul>
             <li>Contributed to real-robot deployment and integration of a Unitree G1 box-handling system.</li>
             <li>Worked on FoundationPose 6D tracking, RGB-D perception, VIVE localization, and ChArUco calibration.</li>
@@ -117,7 +117,7 @@ nav_order: 3
         <div class="exp-copy">
           <div class="exp-heading"><h3>Deakin University</h3><span class="exp-type">Teaching</span></div>
           <p class="exp-role">Sessional Academic / Teaching</p>
-          <p class="exp-dates"><time datetime="2024">2024</time> – Present</p>
+          <p class="exp-dates"><time datetime="2024-07">Jul 2024</time> – <time datetime="2026-06">Jun 2026</time></p>
           <ul>
             <li>Supported tutorials and student learning in computing and artificial intelligence-related units.</li>
             <li>Teaching experience includes SIT718, SIT741 and SIT232.</li>

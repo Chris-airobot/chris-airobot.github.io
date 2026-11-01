@@ -82,7 +82,8 @@ nav_order: 3
           <p class="exp-role">Summer School &amp; Robotics Competition</p>
           <p class="exp-dates"><time datetime="2025">2025</time></p>
           <ul>
-            <li>Participated in hands-on robotics vision training and an autonomous-navigation competition.</li>
+            <li>Participated in hands-on robotics vision training and an autonomous-navigation competition as part of <strong>Team Corolla</strong>.</li>
+            <li><strong>Team Corolla placed 2nd</strong> in the autonomous navigation competition.</li>
             <li>Worked with vision and learning methods for robot perception and navigation.</li>
           </ul>
           <div class="exp-tags"><span>Computer Vision</span><span>Autonomous Navigation</span><span>Robotics</span></div>
@@ -92,6 +93,18 @@ nav_order: 3
               <source src="{{ '/assets/videos/rvss-navigation-demo.mp4' | relative_url }}" type="video/mp4">
             </video>
           </details>
+          {% assign rvss_team_photo = site.static_files | where: "path", "/assets/images/rvss-team-corolla.jpg" | first %}
+          {% if rvss_team_photo %}
+          <details class="exp-demo-expand exp-team-photo">
+            <summary>Team Corolla · 2nd place — View team photo</summary>
+            <figure>
+              <a href="{{ '/assets/images/rvss-team-corolla.jpg' | relative_url }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ '/assets/images/rvss-team-corolla.jpg' | relative_url }}" loading="lazy" alt="Team Corolla group photograph at Robotics Vision Summer School">
+              </a>
+              <figcaption>Team Corolla at RVSS 2025, runners-up in the autonomous navigation competition.</figcaption>
+            </figure>
+          </details>
+          {% endif %}
         </div>
         <a class="exp-media-link" href="{{ '/assets/videos/rvss-navigation-demo.mp4' | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Watch RVSS autonomous navigation demonstration"><img class="exp-media" src="{{ '/assets/images/rvss-navigation-animated.webp' | relative_url }}" alt="Mobile robot following a tabletop navigation course" loading="lazy"></a>
       </article>
@@ -256,6 +269,10 @@ nav_order: 3
 .experience-page .exp-demo-expand { margin-top: .7rem; max-width: 580px; }
 .experience-page .exp-demo-expand summary { font-size: .72rem; font-weight: 670; color: var(--exp-accent); cursor: pointer; }
 .experience-page .exp-demo-expand video { display: block; width: 100%; height: auto; aspect-ratio: 16/9; border-radius: 7px; margin-top: .6rem; background: #111; }
+.experience-page .exp-team-photo figure { max-width: 480px; margin: .6rem 0 0; }
+.experience-page .exp-team-photo img { display: block; width: 100%; height: auto; border-radius: 7px; }
+.experience-page .exp-team-photo figcaption { margin-top: .3rem; font-size: .65rem; line-height: 1.5; color: var(--exp-muted); }
+
 
 .experience-page .exp-media-link { flex: 0 0 112px; width: 112px; border-radius: 7px; overflow: hidden; margin-top: .16rem; align-self: flex-start; }
 .experience-page .exp-media { display: block; width: 100%; height: 86px; object-fit: cover; border-radius: 7px; transition: transform .2s ease; }

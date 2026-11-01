@@ -3,6 +3,8 @@ layout: page
 title: Samsung Research — Unitree G1 Humanoid Manipulation
 description: Samsung Research · Unitree G1 · Real-world box handling, policy deployment, 6D tracking, and localization.
 img: assets/images/samsung/g1-real-deployment.jpg
+preview_video: assets/videos/g1-box-handling-demo.mp4
+preview_video_fit: contain
 importance: 1
 category: industry
 permalink: /projects/humanoid-integration/

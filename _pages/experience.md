@@ -86,7 +86,9 @@ nav_order: 3
             <li>Worked with vision and learning methods for robot perception and navigation.</li>
           </ul>
           <div class="exp-tags"><span>Computer Vision</span><span>Autonomous Navigation</span><span>Robotics</span></div>
+          <a class="exp-project-link" href="{{ '/assets/videos/rvss-navigation-demo.mp4' | relative_url }}" target="_blank" rel="noopener noreferrer">Watch cropped navigation demo <span aria-hidden="true">↗</span></a>
         </div>
+        <a class="exp-media-link" href="{{ '/assets/videos/rvss-navigation-demo.mp4' | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Watch RVSS autonomous navigation demonstration"><img class="exp-media" src="{{ '/assets/images/rvss-navigation-animated.webp' | relative_url }}" alt="Mobile robot following a tabletop navigation course" loading="lazy"></a>
       </article>
     </section>
 
@@ -140,8 +142,9 @@ nav_order: 3
             <li>Evaluated the method on a physical UR5 / Robotiq system; second author on an IROS 2023 paper.</li>
           </ul>
           <div class="exp-tags"><span>In-Hand Manipulation</span><span>Tactile Sensing</span><span>UR5</span><span>IROS 2023</span></div>
-          <a class="exp-project-link" href="{{ '/projects/in-hand-pivoting/' | relative_url }}">View In-Hand Pivoting project <span aria-hidden="true">↗</span></a>
+          <a class="exp-project-link" href="{{ '/projects/in-hand-pivoting/' | relative_url }}">Watch In-Hand Pivoting demonstration <span aria-hidden="true">↗</span></a>
         </div>
+        <a class="exp-media-link" href="{{ '/projects/in-hand-pivoting/' | relative_url }}" aria-label="Open Monash in-hand pivoting project"><img class="exp-media" src="{{ '/assets/images/monash-pivoting-animated.webp' | relative_url }}" alt="UR5 robot pivoting an object using a Robotiq gripper" loading="lazy"></a>
       </article>
     </section>
 

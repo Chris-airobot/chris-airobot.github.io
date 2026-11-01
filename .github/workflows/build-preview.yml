@@ -39,7 +39,18 @@ jobs:
       - name: Install required build tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y imagemagick
+          sudo apt-get install -y imagemagick ffmpeg
+
+      - name: Generate animated Execution-Aware project snapshot
+        run: |
+          set -euo pipefail
+          ffmpeg -hide_banner -loglevel error -y \
+            -i assets/videos/execution-preview.mp4 \
+            -vf 'fps=10,scale=640:-2:flags=lanczos' \
+            -an -c:v libwebp_anim -lossless 0 -quality 50 -compression_level 5 -loop 0 \
+            assets/images/execution-preview-animated.webp
+          test -s assets/images/execution-preview-animated.webp
+          ls -lh assets/images/execution-preview-animated.webp
 
       - name: Build al-folio under /al-folio-preview
         env:

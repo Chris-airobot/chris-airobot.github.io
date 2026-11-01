@@ -86,7 +86,12 @@ nav_order: 3
             <li>Worked with vision and learning methods for robot perception and navigation.</li>
           </ul>
           <div class="exp-tags"><span>Computer Vision</span><span>Autonomous Navigation</span><span>Robotics</span></div>
-          <a class="exp-project-link" href="{{ '/assets/videos/rvss-navigation-demo.mp4' | relative_url }}" target="_blank" rel="noopener noreferrer">Watch cropped navigation demo <span aria-hidden="true">↗</span></a>
+          <details class="exp-demo-expand">
+            <summary>Watch cropped navigation demo</summary>
+            <video controls playsinline preload="none" poster="{{ '/assets/images/rvss-navigation-poster.jpg' | relative_url }}" aria-label="RVSS autonomous navigation video">
+              <source src="{{ '/assets/videos/rvss-navigation-demo.mp4' | relative_url }}" type="video/mp4">
+            </video>
+          </details>
         </div>
         <a class="exp-media-link" href="{{ '/assets/videos/rvss-navigation-demo.mp4' | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Watch RVSS autonomous navigation demonstration"><img class="exp-media" src="{{ '/assets/images/rvss-navigation-animated.webp' | relative_url }}" alt="Mobile robot following a tabletop navigation course" loading="lazy"></a>
       </article>
@@ -248,6 +253,10 @@ nav_order: 3
 .experience-page .exp-tags span { font-size: .61rem; line-height: 1.3; background: var(--exp-border); color: var(--exp-text); padding: .23rem .42rem; border-radius: 5px; }
 .experience-page .exp-project-link { font-size: .72rem; display: inline-flex; align-items: center; gap: .3rem; color: var(--exp-accent); font-weight: 670; margin-top: .7rem; text-decoration: none; }
 .experience-page .exp-project-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.experience-page .exp-demo-expand { margin-top: .7rem; max-width: 580px; }
+.experience-page .exp-demo-expand summary { font-size: .72rem; font-weight: 670; color: var(--exp-accent); cursor: pointer; }
+.experience-page .exp-demo-expand video { display: block; width: 100%; height: auto; aspect-ratio: 16/9; border-radius: 7px; margin-top: .6rem; background: #111; }
+
 .experience-page .exp-media-link { flex: 0 0 112px; width: 112px; border-radius: 7px; overflow: hidden; margin-top: .16rem; align-self: flex-start; }
 .experience-page .exp-media { display: block; width: 100%; height: 86px; object-fit: cover; border-radius: 7px; transition: transform .2s ease; }
 .experience-page .exp-media-link:hover .exp-media { transform: scale(1.045); }

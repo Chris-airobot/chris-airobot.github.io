@@ -46,7 +46,7 @@ permalink: /projects/humanoid-integration/
   {% assign g1_localization_video = site.static_files | where: "path", "/assets/videos/g1-localization-demo.mp4" | first %}
   {% if g1_localization_video %}
   <figure class="g1-video-figure">
-    <video controls playsinline preload="none" aria-label="VIVE-based G1 localization and coordinate-frame alignment visualization">
+    <video controls playsinline preload="none" poster="{{ '/assets/images/samsung/g1-localization-poster.jpg' | relative_url }}" aria-label="VIVE-based G1 localization and coordinate-frame alignment visualization">
       <source src="{{ '/assets/videos/g1-localization-demo.mp4' | relative_url }}" type="video/mp4">
       <a href="{{ '/assets/videos/g1-localization-demo.mp4' | relative_url }}">Watch the localization video</a>
     </video>

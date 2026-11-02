@@ -95,8 +95,8 @@ nav_order: 3
           </details>
           {% assign rvss_team_photo = site.static_files | where: "path", "/assets/images/rvss-team-corolla.jpg" | first %}
           {% if rvss_team_photo %}
-          <details class="exp-demo-expand exp-team-photo">
-            <summary>Team Corolla · 2nd place — View team photo</summary>
+          <details class="exp-demo-expand exp-team-photo" open>
+            <summary>Team Corolla · 2nd place — Team photo</summary>
             <figure>
               <a href="{{ '/assets/images/rvss-team-corolla.jpg' | relative_url }}" target="_blank" rel="noopener noreferrer">
                 <img src="{{ '/assets/images/rvss-team-corolla.jpg' | relative_url }}" loading="lazy" alt="Team Corolla group photograph at Robotics Vision Summer School">
@@ -200,8 +200,8 @@ nav_order: 3
           <div class="exp-tags"><span>Mechatronics</span><span>Control</span><span>Engineering Design</span><span>Warman 2020</span></div>
           {% assign warman_image = site.static_files | where: "path", "/assets/images/warman-2020-design-iterations.jpg" | first %}
           {% if warman_image %}
-          <details class="exp-demo-expand exp-warman-design">
-            <summary>View Warman 2020 engineering design</summary>
+          <details class="exp-demo-expand exp-warman-design" open>
+            <summary>Warman 2020 engineering design</summary>
             <figure>
               <a href="{{ '/assets/images/warman-2020-design-iterations.jpg' | relative_url }}" target="_blank" rel="noopener noreferrer">
                 <img src="{{ '/assets/images/warman-2020-design-iterations.jpg' | relative_url }}" loading="lazy" alt="Six CAD views showing three design iterations for the Warman 2020 conceptual mobile robot">

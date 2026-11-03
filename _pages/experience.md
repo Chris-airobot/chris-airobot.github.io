@@ -136,11 +136,12 @@ nav_order: 3
           <p class="exp-role">PhD Candidate in Robotics &amp; AI</p>
           <p class="exp-dates"><time datetime="2023-11">Nov 2023</time> – Present <span class="exp-muted">· Completion expected 2027</span></p>
           <ul>
-            <li>Researching reliable robotic manipulation: grasp-conditioned placement and execution-aware planning.</li>
-            <li>Developed residual reinforcement learning for contact-rich insertion, deployed on physical xArm7.</li>
-            <li>Published an ACRA 2025 oral paper and developed further studies under review.</li>
-            <li><strong>Scholarship:</strong> DUPR Scholarship (Deakin University Postgraduate Research Scholarship).</li>
+            <li>Investigating reliable robotic manipulation through grasp-conditioned placement and execution-aware planning.</li>
+            <li>Developed residual reinforcement learning for contact-rich book insertion, with simulation training and physical xArm7 deployment.</li>
+            <li>Built and evaluated robot-learning workflows spanning geometric feasibility, motion planning, contact interaction, and real-robot trials.</li>
+            <li><strong>Scholarship:</strong> DUPR (Deakin University Postgraduate Research Scholarship).</li>
           </ul>
+          <p class="exp-supervision"><strong>PhD supervision:</strong> Dr. Akansel Cosgun (initial Principal Supervisor), Prof. Richard Dazeley (current Principal Supervisor), and Dr. Benjamin Champion.</p>
           <div class="exp-tags"><span>Robot Manipulation</span><span>Reinforcement Learning</span><span>Sim-to-Real</span><span>xArm7</span></div>
           <a class="exp-project-link" href="{{ '/projects/' | relative_url }}">Explore PhD research projects <span aria-hidden="true">↗</span></a>
         </div>
@@ -285,6 +286,8 @@ nav_order: 3
 .experience-page .exp-card ul { font-size: .71rem; line-height: 1.52; margin: 0 0 .55rem 0; padding-left: 1.05rem; color: var(--exp-muted); }
 .experience-page .exp-card li { margin: 0 0 .17rem; }
 .experience-page .exp-summary { font-size: .73rem; line-height: 1.6; color: var(--exp-muted); margin: 0 0 .5rem; }
+.experience-page .exp-supervision { font-size: .71rem; line-height: 1.6; color: var(--exp-muted); margin: .28rem 0 .6rem; }
+.experience-page .exp-supervision strong { color: var(--exp-text); }
 .experience-page .exp-tags { display: flex; flex-wrap: wrap; gap: .24rem; }
 .experience-page .exp-tags span { font-size: .61rem; line-height: 1.3; background: var(--exp-border); color: var(--exp-text); padding: .23rem .42rem; border-radius: 5px; }
 .experience-page .exp-project-link { font-size: .72rem; display: inline-flex; align-items: center; gap: .3rem; color: var(--exp-accent); font-weight: 670; margin-top: .7rem; text-decoration: none; }

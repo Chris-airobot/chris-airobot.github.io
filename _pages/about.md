@@ -21,7 +21,7 @@ latest_posts:
   enabled: false
 ---
 
-I am **Tianyuan (Chris) Liu**, a PhD candidate in Robotics & AI at **Deakin University**, supervised by **Prof. Richard Dazeley (Principal Supervisor)**, Dr. Akansel Cosgun, and Dr. Benjamin Champion.
+I am **Tianyuan (Chris) Liu**, a PhD candidate in Robotics & AI at **Deakin University**. My supervisors are **Dr. Akansel Cosgun (initial Principal Supervisor)**, **Prof. Richard Dazeley (current Principal Supervisor)**, and **Dr. Benjamin Champion**.
 
 I hold a **Master of Information Technology (AI)** and a **Bachelor of Science (Mechatronics Engineering)** from the **University of Melbourne**. During my master's studies, I conducted research on **adversarial reinforcement learning** under the supervision of **A/Prof Wafa Johal and Prof. Christopher Leckie**.
 

@@ -120,7 +120,9 @@ nav_order: 3
           <p class="exp-dates"><time datetime="2024-07">Jul 2024</time> – <time datetime="2026-06">Jun 2026</time></p>
           <ul>
             <li>Supported tutorials and student learning in computing and artificial intelligence-related units.</li>
-            <li>Teaching experience includes SIT718, SIT741 and SIT232.</li>
+            <li><strong>SIT718 — Real World Analytics</strong></li>
+            <li><strong>SIT741 — Statistical Data Analysis</strong></li>
+            <li><strong>SIT232 — Object-Oriented Development</strong></li>
           </ul>
           <div class="exp-tags"><span>University Teaching</span><span>Computing</span><span>AI</span></div>
         </div>
@@ -181,7 +183,7 @@ nav_order: 3
             <li>Master's thesis: <strong>Applying Human-in-the-Loop in Adversarial Reinforcement Learning</strong> (2023).</li>
             <li><strong>Dean’s List (2022).</strong></li>
           </ul>
-          <p class="exp-supervision"><strong>Supervision Team:</strong> A/Prof Wafa Johal and Prof. Christopher Leckie.</p>
+          <p class="exp-supervision"><strong>Supervision Team:</strong> A/Prof Wafa Johal (Principal Supervisor) and Prof. Christopher Leckie.</p>
           <div class="exp-tags"><span>Artificial Intelligence</span><span>Adversarial RL</span><span>Human-in-the-Loop</span></div>
           <a class="exp-project-link" href="{{ '/research/master-thesis-adversarial-rl/' | relative_url }}">Explore Master's thesis research <span aria-hidden="true">↗</span></a>
         </div>

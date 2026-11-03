@@ -141,7 +141,7 @@ nav_order: 3
             <li>Built and evaluated robot-learning workflows spanning geometric feasibility, motion planning, contact interaction, and real-robot trials.</li>
             <li><strong>Scholarship:</strong> DUPR (Deakin University Postgraduate Research Scholarship).</li>
           </ul>
-          <p class="exp-supervision"><strong>PhD supervision:</strong> Dr. Akansel Cosgun (initial Principal Supervisor), Prof. Richard Dazeley (current Principal Supervisor), and Dr. Benjamin Champion.</p>
+          <p class="exp-supervision"><strong>Supervision Team:</strong> Dr. Akansel Cosgun (initial Principal Supervisor), Prof. Richard Dazeley (current Principal Supervisor), and Dr. Benjamin Champion.</p>
           <div class="exp-tags"><span>Robot Manipulation</span><span>Reinforcement Learning</span><span>Sim-to-Real</span><span>xArm7</span></div>
           <a class="exp-project-link" href="{{ '/projects/' | relative_url }}">Explore PhD research projects <span aria-hidden="true">↗</span></a>
         </div>
@@ -179,9 +179,9 @@ nav_order: 3
           <ul>
             <li>Specialized in artificial intelligence, machine learning, and adversarial reinforcement learning.</li>
             <li>Master's thesis: <strong>Applying Human-in-the-Loop in Adversarial Reinforcement Learning</strong> (2023).</li>
-            <li>Research supervised by A/Prof Wafa Johal and Prof. Christopher Leckie.</li>
             <li><strong>Dean’s List (2022).</strong></li>
           </ul>
+          <p class="exp-supervision"><strong>Supervision Team:</strong> A/Prof Wafa Johal and Prof. Christopher Leckie.</p>
           <div class="exp-tags"><span>Artificial Intelligence</span><span>Adversarial RL</span><span>Human-in-the-Loop</span></div>
           <a class="exp-project-link" href="{{ '/research/master-thesis-adversarial-rl/' | relative_url }}">Explore Master's thesis research <span aria-hidden="true">↗</span></a>
         </div>

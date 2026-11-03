@@ -20,7 +20,7 @@ related_publications: true
     <a href="https://github.com/Chris-airobot/EndpointPQ" target="_blank" rel="noopener noreferrer">Research code (GitHub) ↗</a>
     <a href="#grasp-demo">View animated illustration ↓</a>
   </div>
-  <p class="research-authors">Tianyuan Liu, Richard Dazeley, Benjamin Champion, Akan Cosgun</p>
+  <p class="research-authors">Tianyuan Liu, Richard Dazeley, Benjamin Champion, Akansel Cosgun</p>
 
   <div class="research-facts">
     <div><small>Robot model</small><strong>Franka Panda · 7 DoF</strong></div>

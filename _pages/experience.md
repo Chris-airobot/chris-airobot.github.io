@@ -22,14 +22,14 @@ nav_order: 3
       </div>
       <nav class="exp-shortcuts" aria-label="Jump to an experience">
         <p>EXPLORE</p>
-        <a href="#experience-samsung">2026 &mdash; Samsung Research <span>↗</span></a>
-        <a href="#experience-zoellent">2026 &mdash; Zoellent <span>↗</span></a>
+        <a href="#experience-samsung">2026 &mdash; Samsung Research China <span>↗</span></a>
+        <a href="#experience-zoellent">2026 &mdash; Zoellent Technology <span>↗</span></a>
         <a href="#experience-rvss">2025 &mdash; RVSS <span>↗</span></a>
-        <a href="#experience-teaching">2024 &mdash; Deakin Teaching <span>↗</span></a>
-        <a href="#experience-deakin">2023 &mdash; PhD Research <span>↗</span></a>
-        <a href="#experience-monash">2022 &mdash; Monash <span>↗</span></a>
-        <a href="#experience-melbourne-master">2021 &mdash; Melbourne Master <span>↗</span></a>
-        <a href="#experience-melbourne-bsc">2018 &mdash; Melbourne BSc <span>↗</span></a>
+        <a href="#experience-teaching">2024 &mdash; Deakin University · Teaching <span>↗</span></a>
+        <a href="#experience-deakin">2023 &mdash; Deakin University · PhD <span>↗</span></a>
+        <a href="#experience-monash">2022 &mdash; Monash University <span>↗</span></a>
+        <a href="#experience-melbourne-master">2021 &mdash; UniMelb · Master’s <span>↗</span></a>
+        <a href="#experience-melbourne-bsc">2018 &mdash; UniMelb · Bachelor’s <span>↗</span></a>
       </nav>
     </div>
   </div>
@@ -128,18 +128,18 @@ nav_order: 3
     </section>
 
     <section class="exp-entry" id="experience-deakin" data-exp-year="2023">
-      <div class="exp-year" aria-hidden="true"><strong>2023</strong><span class="exp-node exp-research"></span></div>
-      <article class="exp-card exp-kind-research">
+      <div class="exp-year" aria-hidden="true"><strong>2023</strong><span class="exp-node exp-education"></span></div>
+      <article class="exp-card exp-kind-education">
         <div class="exp-mark">DU</div>
         <div class="exp-copy">
-          <div class="exp-heading"><h3>Deakin University</h3><span class="exp-type">PhD Research</span></div>
+          <div class="exp-heading"><h3>Deakin University</h3><span class="exp-type">Education</span></div>
           <p class="exp-role">PhD Candidate in Robotics &amp; AI</p>
           <p class="exp-dates"><time datetime="2023-11">Nov 2023</time> – Present <span class="exp-muted">· Completion expected 2027</span></p>
           <ul>
             <li>Researching reliable robotic manipulation: grasp-conditioned placement and execution-aware planning.</li>
             <li>Developed residual reinforcement learning for contact-rich insertion, deployed on physical xArm7.</li>
             <li>Published an ACRA 2025 oral paper and developed further studies under review.</li>
-            <li><strong>Scholarship:</strong> Deakin Scholarship.</li>
+            <li><strong>Scholarship:</strong> DUPR Scholarship (Deakin University Postgraduate Research Scholarship).</li>
           </ul>
           <div class="exp-tags"><span>Robot Manipulation</span><span>Reinforcement Learning</span><span>Sim-to-Real</span><span>xArm7</span></div>
           <a class="exp-project-link" href="{{ '/projects/' | relative_url }}">Explore PhD research projects <span aria-hidden="true">↗</span></a>
@@ -170,7 +170,7 @@ nav_order: 3
     <section class="exp-entry" id="experience-melbourne-master" data-exp-year="2021">
       <div class="exp-year" aria-hidden="true"><strong>2021</strong><span class="exp-node exp-education"></span></div>
       <article class="exp-card exp-kind-education">
-        <div class="exp-mark">UM</div>
+        <div class="exp-mark">UoM</div>
         <div class="exp-copy">
           <div class="exp-heading"><h3>The University of Melbourne</h3><span class="exp-type">Education</span></div>
           <p class="exp-role">Master of Information Technology (Artificial Intelligence)</p>
@@ -190,7 +190,7 @@ nav_order: 3
     <section class="exp-entry" id="experience-melbourne-bsc" data-exp-year="2018">
       <div class="exp-year" aria-hidden="true"><strong>2018</strong><span class="exp-node exp-education"></span></div>
       <article class="exp-card exp-kind-education">
-        <div class="exp-mark">UM</div>
+        <div class="exp-mark">UoM</div>
         <div class="exp-copy">
           <div class="exp-heading"><h3>The University of Melbourne</h3><span class="exp-type">Education</span></div>
           <p class="exp-role">Bachelor of Science (Mechatronics Engineering)</p>

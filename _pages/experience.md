@@ -139,6 +139,7 @@ nav_order: 3
             <li>Researching reliable robotic manipulation: grasp-conditioned placement and execution-aware planning.</li>
             <li>Developed residual reinforcement learning for contact-rich insertion, deployed on physical xArm7.</li>
             <li>Published an ACRA 2025 oral paper and developed further studies under review.</li>
+            <li><strong>Scholarship:</strong> Deakin Scholarship.</li>
           </ul>
           <div class="exp-tags"><span>Robot Manipulation</span><span>Reinforcement Learning</span><span>Sim-to-Real</span><span>xArm7</span></div>
           <a class="exp-project-link" href="{{ '/projects/' | relative_url }}">Explore PhD research projects <span aria-hidden="true">↗</span></a>
@@ -157,6 +158,7 @@ nav_order: 3
           <ul>
             <li>Co-developed closed-loop in-hand pivoting using vision, force/torque, and tactile feedback.</li>
             <li>Evaluated the method on a physical UR5 / Robotiq system; second author on an IROS 2023 paper.</li>
+            <li><strong>Scholarship:</strong> Monash Summer Research Scholarship.</li>
           </ul>
           <div class="exp-tags"><span>In-Hand Manipulation</span><span>Tactile Sensing</span><span>UR5</span><span>IROS 2023</span></div>
           <a class="exp-project-link" href="{{ '/projects/in-hand-pivoting/' | relative_url }}">Watch In-Hand Pivoting demonstration <span aria-hidden="true">↗</span></a>
